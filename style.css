@@ -128,23 +128,28 @@ h1, h2, h3, h4, h5 {
   font-size: 11.5px;
   line-height: 1.6;
 }
+ @media (min-width: 2000px) {
+  .logo-wrap{
+  text-align: center;
+}
+ .footer-text {
+text-align: center;
+  }
+ }
+
 
 /* Very large screens */
  @media (min-width: 1600px) {
   .form-col {
     flex-basis: 44%;
   }
-  .footer-text {
-text-align: center;
-  }
+ 
  .cover-photo {
   height: 100vh;
   width: 120vh;
   
 }
-.logo-wrap{
-  text-align: center;
-}
+
   .login-form {
     max-width: 470px;
   }

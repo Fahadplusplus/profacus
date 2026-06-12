@@ -6,11 +6,15 @@
 
 body {
   background: #f4f6fa;
-  font-family: sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Gabarito', sans-serif;
 }
 
 .layout-body {
@@ -20,6 +24,7 @@ body {
   overflow: hidden;
 }
 
+/* ── Sidebar ── */
 .sidebar {
   width: 15%;
   height: 100%;
@@ -28,17 +33,18 @@ body {
   flex-shrink: 0;
   overflow-y: auto;
   padding-top: 8px;
+  transition: transform 0.3s ease;
 }
 
 .sidebar .nav-label {
   font-size: 16px;
-
   padding: 10px 20px 4px;
 }
-.nav{
-    background: #fff;
-    border-radius: 10px;
-    margin-inline: 10px ;
+
+.nav {
+  background: #fff;
+  border-radius: 10px;
+  margin-inline: 10px;
 }
 
 .sidebar .nav-item a {
@@ -53,9 +59,7 @@ body {
   margin: 1px 8px;
 }
 
-.sidebar .nav-item a:hover {
-  background: #f3f4f6;
-}
+.sidebar .nav-item a:hover { background: #f3f4f6; }
 
 .sidebar .nav-item a.active {
   background: #f59e0b;
@@ -64,14 +68,25 @@ body {
   border-radius: 20px;
 }
 
-.side-logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    padding-top: 20px;
+.side-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
 }
 
+/* ── Overlay (mobile only) ── */
+#sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 199;
+}
+
+#sidebar-overlay.active { display: block; }
+
+/* ── Right panel ── */
 .right-panel {
   display: flex;
   flex-direction: column;
@@ -79,8 +94,9 @@ body {
   overflow: hidden;
 }
 
+/* ── Top navbar ── */
 .top-navbar {
-  height: 10%;
+  height: 56px;
   background: #f3f8ff;
   border-bottom: 1px solid #e5e7eb;
   display: flex;
@@ -99,9 +115,7 @@ body {
   gap: 8px;
 }
 
-.top-navbar .brand img {
-  height: 32px;
-}
+.top-navbar .brand img { height: 32px; }
 
 .top-navbar .admin-info {
   font-size: 14px;
@@ -112,22 +126,31 @@ body {
   cursor: pointer;
 }
 
+/* Hamburger button — hidden on desktop */
+#sidebar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #1a2f7a;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin-right: 8px;
+}
+
+/* ── Main content ── */
 .main-content {
   flex: 1;
   overflow-y: auto;
   padding: 28px 32px;
   scrollbar-width: none;
   -ms-overflow-style: none;
-background-color: white;  
+  background-color: white;
 }
- 
-.main-content::-webkit-scrollbar {
-  display: none;
-}
- 
 
+.main-content::-webkit-scrollbar { display: none; }
 
-
+/* ── Footer ── */
 .footer {
   height: 44px;
   background: #1e3a8a;
@@ -140,3 +163,169 @@ background-color: white;
   flex-shrink: 0;
 }
 
+/* ── PRISM cards ── */
+.prism-wrapper { padding: 32px 24px; }
+
+.prism-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.prism-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+
+.prism-card {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 28px 20px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  background: #fff;
+}
+
+.prism-card:hover {
+  box-shadow: 0 4px 16px rgba(33, 64, 154, 0.1);
+  border-color: #21409a;
+}
+
+.prism-card.active {
+  background: #21409a;
+  border-color: #21409a;
+}
+
+.prism-card.active .card-title-text { color: #fff; }
+.prism-card.active .card-desc       { color: rgba(255,255,255,0.8); }
+
+.prism-card.selected {
+  border: 2px solid #21409a;
+  background: #fff;
+}
+
+.prism-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(33, 64, 154, 0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #21409a;
+  flex-shrink: 0;
+}
+
+.prism-card.active .prism-icon {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.card-title-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #21409a;
+  margin: 0;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.prism-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: #21409a;
+  border-radius: 0 0 6px 6px;
+}
+
+.prism-card.active::after { background: rgba(255,255,255,0.4); }
+
+.prism-card.selected::before {
+  content: '';
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 28px;
+  border-left: 2px dashed #21409a;
+}
+
+/* ══════════════════════════════
+   RESPONSIVE BREAKPOINTS
+══════════════════════════════ */
+
+/* Large desktops 993px – 1199px */
+@media (min-width: 993px) and (max-width: 1199px) {
+  .brand { font-size: 16px !important; }
+}
+
+/* Wide 1200px+ */
+@media (min-width: 1200px) {
+  .brand { font-size: 20px !important; font-weight: 600; }
+}
+
+/* Wide 1400px+ */
+@media (min-width: 1400px) {
+  .brand { font-size: 22px !important; font-weight: 600; }
+}
+
+/* Small laptops ≤ 992px — sidebar becomes overlay drawer */
+@media (max-width: 992px) {
+  #sidebar-toggle { display: block; }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    z-index: 200;
+    transform: translateX(-100%);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+  }
+
+  /* When JS adds .sidebar-open */
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .brand { font-size: 14px !important; }
+  .main-content { padding: 20px 16px; }
+}
+
+/* Tablets ≤ 768px */
+@media (max-width: 768px) {
+  .prism-card.selected::before { display: none; }
+  .prism-title { font-size: 18px; }
+  .main-content { padding: 16px 12px; }
+}
+
+/* Mobile ≤ 576px */
+@media (max-width: 576px) {
+  .footer {
+    height: 36px;
+    color: #fff;
+    font-size: 8px;
+    padding-inline: 10px;
+  }
+  .brand { font-size: 13px !important; }
+  .prism-wrapper { padding: 20px 12px; }
+}
