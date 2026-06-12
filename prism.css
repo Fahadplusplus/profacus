@@ -193,6 +193,11 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.stat-pill:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
 }
 
 .stat-pill .label { font-size: 18px; color: #6b7280; }
@@ -230,6 +235,7 @@ h1, h2, h3, h4, h5 {
   text-decoration: none;
 }
 
+
 .action-icons a {
   color: #6b7280;
   font-size: 17px;
@@ -245,6 +251,11 @@ h1, h2, h3, h4, h5 {
   background: #e4eefd;
   margin-top: 10px;
   padding: 4px;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.table-icon:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
 }
 
 /* ── Buttons ── */
