@@ -218,6 +218,8 @@ h1, h2, h3, h4, h5 {
   flex: 1;
   position: relative;
   z-index: 1;
+  text-decoration: none;
+
 }
 
 .sd-label-top {
@@ -334,9 +336,10 @@ h1, h2, h3, h4, h5 {
   .sd-steps-container { max-width: 200vh; }
   .sd-label-bottom .name { font-size: 20px; margin-left: 20px; }
   .sd-label-top .desc,
-  .sd-label-bottom .desc { font-size: 16px; max-width: 150px; }
+  .sd-label-bottom .desc { font-size: 16px; max-width: 180px; }
   .sd-connector       { left: calc(55% + 50px); top: 40px;  width: calc(75% - 50px); }
-  .sd-connectorInvert { left: calc(55% + 50px); top: 200px; width: calc(75% - 50px); }
+  .sd-connectorInvert { left: calc(55% + 50px); top: 190px; width: calc(75% - 50px); }
+
 }
 
 /* 1200px – 1399px */
