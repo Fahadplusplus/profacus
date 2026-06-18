@@ -12,35 +12,167 @@
 
 <body>
 
-    <!-- Overlay: click to close sidebar on mobile -->
+  
     <div id="sidebar-overlay"></div>
 
     <div class="layout-body">
 
-       <div class="sidebar">
-            <div class="side-logo">
-                <img src="assets/Logo.png" alt="Profacus">
-            </div>
+    <div class="sidebar d-flex flex-column vh-100 overflow-auto">
+  <!-- Logo -->
+  <div class="text-center ">
+    <img
+      src="assets/Logo.png"
+      alt="Profacus"
+      class="sidebar-logo img-fluid"
+    />
+  </div>
 
-            <ul class="nav flex-column mt-5">
-                <li class="nav-label"><img src="assets/icons/user.svg" alt=""><span class="ms-2">Admin <i class="bi bi-chevron-down"></i></span></li>
-                <li class="nav-item"><a href="#"> <img src="assets/icons/lock.svg" alt=""> Access</a></li>
-                <li class="nav-item"><a href="#"> <img src="assets/icons/Vector (2).svg" alt=""> Roles</a></li>
-                <li class="nav-item"><a href="#"> <img src="assets/icons/usersFill.svg" alt=""> Users</a></li>
-            </ul>
+  <nav class=" pb-4 mt-5    ">
+    <!-- Admin dropdown -->
+    <button
+      class="sidebar-link sidebar-dropdown-btn btn w-100 d-flex align-items-center justify-content-between"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#adminMenu"
+      aria-expanded="true"
+      aria-controls="adminMenu"
+    >
+      <span class="d-flex align-items-center gap-2">
+        <img src="assets/icons/user.svg" alt="" />
+        <span>Admin</span>
+      </span>
 
-            <ul class="nav flex-column mt-2">
-                <li class="nav-item mt-1"><a href="#"><img src="assets/icons/prism.svg" alt=""> Prism</a></li>
-                <li class="nav-item mt-1"><a href="#" class="active"><img src="assets/icons/user.svg" alt=""> Home</a></li>
-                <li class="nav-item mt-1"><a href="#"><img src="assets/icons/user.svg" alt=""> Dashboard</a></li>
-                <li class="nav-item mt-1"><a href="#"><img src="assets/icons/user.svg" alt=""> Survey Setup</a></li>
-                <li class="nav-item mt-1"><a href="#"><img src="assets/icons/user.svg" alt=""> Setup</a></li>
-                <li class="nav-item mt-1"><a href="#"><img src="assets/icons/user.svg" alt=""> Survey Live/Close</a></li>
-                <li class="nav-item mt-1"><a href="#"><img src="assets/icons/user.svg" alt=""> Participation</a></li>
-                <li class="nav-item mt-1"><a href="#"><img src="assets/icons/user.svg" alt=""> Result</a></li>
-                <li class="nav-item mt-1"><a href="#"><img src="assets/icons/user.svg" alt=""> Action Planning</a></li>
-            </ul>
+      <i class="bi bi-chevron-down dropdown-icon"></i>
+    </button>
+
+    <div class="collapse show" id="adminMenu">
+      <div class="sidebar-submenu">
+        <a href="#" class="sidebar-submenu-link">
+          <img src="assets/icons/lock.svg" alt="" />
+          <span>Access</span>
+        </a>
+
+        <a href="#" class="sidebar-submenu-link">
+          <img src="assets/icons/Vector (2).svg" alt="" />
+          <span>Roles</span>
+        </a>
+
+        <a href="#" class="sidebar-submenu-link">
+          <img src="assets/icons/usersFill.svg" alt="" />
+          <span>Users</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main menu -->
+    <div class="mt-2">
+      <a href="#" class="sidebar-link active">
+        <img src="assets/icons/prism.svg" class="sidebaricon" alt="" />
+        <span>Prism</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <img src="assets/icons/home.svg" alt="" />
+        <span>Home</span>
+      </a>
+
+      <!-- Dashboard dropdown -->
+      <button
+        class="sidebar-link sidebar-dropdown-btn btn w-100 d-flex align-items-center justify-content-between"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#dashboardMenu"
+        aria-expanded="false"
+        aria-controls="dashboardMenu"
+      >
+        <span class="d-flex align-items-center gap-2">
+          <img src="assets/icons/dashboard.svg" alt="" />
+          <span>Dashboard</span>
+        </span>
+
+        <i class="bi bi-chevron-down dropdown-icon"></i>
+      </button>
+
+      <div class="collapse" id="dashboardMenu">
+        <div class="sidebar-submenu">
+          <a href="#" class="sidebar-submenu-link">Overview</a>
+          <a href="#" class="sidebar-submenu-link">Analytics</a>
+          <a href="#" class="sidebar-submenu-link">Reports</a>
         </div>
+      </div>
+
+      <!-- Survey Setup dropdown -->
+      <button
+        class="sidebar-link sidebar-dropdown-btn btn w-100 d-flex align-items-center justify-content-between"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#surveySetupMenu"
+        aria-expanded="false"
+        aria-controls="surveySetupMenu"
+      >
+        <span class="d-flex align-items-center gap-2">
+          <img src="assets/icons/survey.svg" alt="" />
+          <span>Survey Setup</span>
+        </span>
+
+        <i class="bi bi-chevron-down dropdown-icon"></i>
+      </button>
+
+      <div class="collapse" id="surveySetupMenu">
+        <div class="sidebar-submenu">
+          <a href="#" class="sidebar-submenu-link">Create Survey</a>
+          <a href="#" class="sidebar-submenu-link">Survey List</a>
+          <a href="#" class="sidebar-submenu-link">Survey Questions</a>
+        </div>
+      </div>
+
+      <!-- Setup dropdown -->
+      <button
+        class="sidebar-link sidebar-dropdown-btn btn w-100 d-flex align-items-center justify-content-between"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#setupMenu"
+        aria-expanded="false"
+        aria-controls="setupMenu"
+      >
+        <span class="d-flex align-items-center gap-2">
+          <img src="assets/icons/settings.svg" alt="" />
+          <span>Setup</span>
+        </span>
+
+        <i class="bi bi-chevron-down dropdown-icon"></i>
+      </button>
+
+      <div class="collapse" id="setupMenu">
+        <div class="sidebar-submenu">
+          <a href="#" class="sidebar-submenu-link">General Setup</a>
+          <a href="#" class="sidebar-submenu-link">Departments</a>
+          <a href="#" class="sidebar-submenu-link">Employees</a>
+        </div>
+      </div>
+
+      <a href="#" class="sidebar-link">
+        <img src="assets/icons/live.svg" alt="" />
+        <span>Survey Live/Close</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <img src="assets/icons/participation.svg" alt="" />
+        <span>Participation</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <img src="assets/icons/result.svg" alt="" />
+        <span>Result</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <img src="assets/icons/action.svg" alt="" />
+        <span>Action Planning</span>
+      </a>
+    </div>
+  </nav>
+</div>
 
         <div class="right-panel">
 

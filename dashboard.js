@@ -54,3 +54,13 @@ document.querySelectorAll('.sd-step').forEach(step => {
         step.querySelectorAll('.name').forEach(n => n.classList.add('active-label'));
     });
 });
+
+
+     const dropdownButtons = document.querySelectorAll(".dropdown-toggle-btn");
+
+  dropdownButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const currentMenu = this.closest(".menu-group");
+      currentMenu.classList.toggle("open");
+    });
+  });
