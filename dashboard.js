@@ -1,66 +1,126 @@
-const sidebar   = document.querySelector('.sidebar');
-const overlay   = document.getElementById('sidebar-overlay');
-const toggleBtn = document.getElementById('sidebar-toggle');
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.getElementById("sidebar-overlay");
+const toggleBtn = document.getElementById("sidebar-toggle");
 
-function isMobile() { return window.innerWidth <= 992; }
+function isMobile() {
+  return window.innerWidth <= 992;
+}
 
 function openSidebar() {
-  sidebar.classList.add('sidebar-open');
-  overlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  if (!sidebar) return;
+
+  sidebar.classList.add("sidebar-open");
+
+  if (overlay) {
+    overlay.classList.add("active");
+  }
+
+  document.body.style.overflow = "hidden";
 }
 
 function closeSidebar() {
-  sidebar.classList.remove('sidebar-open');
-  overlay.classList.remove('active');
-  document.body.style.overflow = '';
+  if (!sidebar) return;
+
+  sidebar.classList.remove("sidebar-open");
+
+  if (overlay) {
+    overlay.classList.remove("active");
+  }
+
+  document.body.style.overflow = "";
 }
 
-toggleBtn.addEventListener('click', () => {
-  sidebar.classList.contains('sidebar-open') ? closeSidebar() : openSidebar();
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.contains("sidebar-open")
+      ? closeSidebar()
+      : openSidebar();
+  });
+}
+
+if (overlay) {
+  overlay.addEventListener("click", closeSidebar);
+}
+
+/*
+ * Add active class to normal sidebar links
+ * and sidebar submenu links.
+ */
+const sidebarLinks = document.querySelectorAll(
+  ".sidebar-link[href], .sidebar-submenu-link"
+);
+
+sidebarLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    sidebarLinks.forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    this.classList.add("active");
+
+    /*
+     * When a submenu link is selected, also mark its
+     * parent dropdown button as active.
+     */
+    const collapseMenu = this.closest(".collapse");
+
+    if (collapseMenu) {
+      const dropdownButton = document.querySelector(
+        `[data-bs-target="#${collapseMenu.id}"]`
+      );
+
+      if (dropdownButton) {
+        dropdownButton.classList.add("active");
+      }
+    }
+
+    if (isMobile()) {
+      closeSidebar();
+    }
+  });
 });
 
-overlay.addEventListener('click', closeSidebar);
+/*
+ * Set active link automatically based on the
+ * current page URL.
+ */
+const currentPage = window.location.pathname.split("/").pop();
 
-// Close sidebar when a nav link is clicked on mobile
-sidebar.querySelectorAll('.nav-item a').forEach(link => {
-  link.addEventListener('click', () => { if (isMobile()) closeSidebar(); });
-});
+sidebarLinks.forEach((link) => {
+  const linkPage = link.getAttribute("href");
 
-// On resize: if going back to desktop, clean up any leftover mobile state
-window.addEventListener('resize', () => {
-  if (!isMobile()) {
-    sidebar.classList.remove('sidebar-open');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
+  if (
+    linkPage &&
+    linkPage !== "#" &&
+    linkPage.split("/").pop() === currentPage
+  ) {
+    link.classList.add("active");
+
+    const parentCollapse = link.closest(".collapse");
+
+    if (parentCollapse) {
+      parentCollapse.classList.add("show");
+
+      const dropdownButton = document.querySelector(
+        `[data-bs-target="#${parentCollapse.id}"]`
+      );
+
+      if (dropdownButton) {
+        dropdownButton.classList.add("active");
+        dropdownButton.setAttribute("aria-expanded", "true");
+      }
+    }
   }
 });
-document.querySelectorAll('.prism-card').forEach(card => {
-    card.addEventListener('click', () => {
-        document.querySelectorAll('.prism-card').forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-    });
+
+/*
+ * Remove leftover mobile sidebar state
+ * when switching back to desktop.
+ */
+window.addEventListener("resize", () => {
+  if (!isMobile()) {
+    sidebar?.classList.remove("sidebar-open");
+    overlay?.classList.remove("active");
+    document.body.style.overflow = "";
+  }
 });
-
-document.querySelectorAll('.sd-step').forEach(step => {
-    step.addEventListener('click', () => {
-
-        // Remove active from all circles and labels
-        document.querySelectorAll('.sd-circle').forEach(c => c.classList.remove('active'));
-        document.querySelectorAll('.sd-step .name').forEach(n => n.classList.remove('active-label'));
-
-        // Add active to clicked step
-        step.querySelector('.sd-circle').classList.add('active');
-        step.querySelectorAll('.name').forEach(n => n.classList.add('active-label'));
-    });
-});
-
-
-     const dropdownButtons = document.querySelectorAll(".dropdown-toggle-btn");
-
-  dropdownButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const currentMenu = this.closest(".menu-group");
-      currentMenu.classList.toggle("open");
-    });
-  });
