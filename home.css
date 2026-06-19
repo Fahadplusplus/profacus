@@ -25,6 +25,7 @@ h1, h2, h3, h4, h5 {
 }
 
 
+
 /* ── Right panel ── */
 .right-panel {
   display: flex;
@@ -450,4 +451,11 @@ h1, h2, h3, h4, h5 {
 
 .sidebaricon{
   color: #2948a5;
+}
+
+.sidebar-link.active,
+.sidebar-submenu-link.active {
+    background-color: #f0f0f0;
+    color: #000;
+    font-weight: 600;
 }
