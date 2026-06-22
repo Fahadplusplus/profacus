@@ -15,9 +15,12 @@ Promise.all([
 // Function to handle active class on sidebar links
 function addSidebarActiveHandlers() {
   const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const dropdownButtons = document.querySelectorAll('.sidebar-dropdown-btn');
+
   sidebarLinks.forEach(link => {
     link.addEventListener('click', function() {
       sidebarLinks.forEach(l => l.classList.remove('active'));
+      dropdownButtons.forEach(btn => btn.classList.remove('active'));
       this.classList.add('active');
     });
   });
@@ -26,6 +29,8 @@ function addSidebarActiveHandlers() {
   submenuLinks.forEach(link => {
     link.addEventListener('click', function() {
       submenuLinks.forEach(l => l.classList.remove('active'));
+      sidebarLinks.forEach(l => l.classList.remove('active'));
+      dropdownButtons.forEach(btn => btn.classList.remove('active'));
       this.classList.add('active');
     });
   });

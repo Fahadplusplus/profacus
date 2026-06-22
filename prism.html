@@ -12,189 +12,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body  >
 
     <!-- Overlay: click to close sidebar on mobile -->
     <div id="sidebar-overlay"></div>
 
     <div class="layout-body">
+        <div id="sidebar-placeholder"></div>
 
-  <div class="sidebar d-flex flex-column vh-100 ">
 
-  <!-- Fixed logo -->
-  <div class="sidebar-header flex-shrink-0 text-center ">
-    <img
-      src="assets/Logo.png"
-      alt="Profacus"
-      class="sidebar-logo img-fluid"
-    />
-  </div>
-
-  <!-- Scrollable sidebar content -->
-  <nav class="sidebar-menu flex-grow-1 overflow-y-auto pb-4">
-
-    <!-- Admin dropdown -->
-    <button
-      class="sidebar-link sidebar-dropdown-btn btn w-100 d-flex align-items-center justify-content-between"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#adminMenu"
-      aria-expanded="true"
-      aria-controls="adminMenu"
-    >
-      <span class="d-flex align-items-center gap-2">
-        <i class="bi bi-person-fill"></i>
-        <span>Admin</span>
-      </span>
-
-      <i class="bi bi-chevron-down dropdown-icon"></i>
-    </button>
-
-    <div class="collapse show" id="adminMenu">
-      <div class="sidebar-submenu">
-
-        <a href="#" class="sidebar-submenu-link">
-          <i class="bi bi-shield-lock"></i>
-          <span>Access</span>
-        </a>
-
-        <a href="#" class="sidebar-submenu-link">
-          <i class="bi bi-person-badge"></i>
-          <span>Roles</span>
-        </a>
-
-        <a href="#" class="sidebar-submenu-link">
-          <i class="bi bi-people"></i>
-          <span>Users</span>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- Main menu -->
-    <div class="mt-2">
-
-      <a href="prism.html" class="sidebar-link">
-        <i class="bi bi-grid-3x3-gap"></i>
-        <span>Prism</span>
-      </a>
-
-      <a href="dashboard.html" class="sidebar-link">
-        <i class="bi bi-house-door"></i>
-        <span>Home</span>
-      </a>
-
-      <!-- Dashboard dropdown -->
-      <button
-        class="sidebar-link sidebar-dropdown-btn btn w-100 d-flex align-items-center justify-content-between"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#dashboardMenu"
-        aria-expanded="false"
-        aria-controls="dashboardMenu"
-      >
-        <span class="d-flex align-items-center gap-2">
-          <i class="bi bi-speedometer2"></i>
-          <span>Dashboard</span>
-        </span>
-
-        <i class="bi bi-chevron-down dropdown-icon"></i>
-      </button>
-
-      <div class="collapse" id="dashboardMenu">
-        <div class="sidebar-submenu">
-          <a href="#" class="sidebar-submenu-link">Overview</a>
-          <a href="#" class="sidebar-submenu-link">Analytics</a>
-          <a href="#" class="sidebar-submenu-link">Reports</a>
-        </div>
-      </div>
-
-      <!-- Survey Setup dropdown -->
-      <button
-        class="sidebar-link sidebar-dropdown-btn btn w-100 d-flex align-items-center justify-content-between"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#surveySetupMenu"
-        aria-expanded="false"
-        aria-controls="surveySetupMenu"
-      >
-        <span class="d-flex align-items-center gap-2">
-          <i class="bi bi-clipboard-data"></i>
-          <span>Survey Setup</span>
-        </span>
-
-        <i class="bi bi-chevron-down dropdown-icon"></i>
-      </button>
-
-      <div class="collapse" id="surveySetupMenu">
-        <div class="sidebar-submenu">
-          <a href="surveyDesign.html" class="sidebar-submenu-link">
-            Survey Design
-          </a>
-
-          <a href="#" class="sidebar-submenu-link">
-            Survey List
-          </a>
-
-          <a href="#" class="sidebar-submenu-link">
-            Survey Questions
-          </a>
-        </div>
-      </div>
-
-      <!-- Setup dropdown -->
-      <button
-        class="sidebar-link sidebar-dropdown-btn btn w-100 d-flex align-items-center justify-content-between"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#setupMenu"
-        aria-expanded="false"
-        aria-controls="setupMenu"
-      >
-        <span class="d-flex align-items-center gap-2">
-          <i class="bi bi-gear"></i>
-          <span>Setup</span>
-        </span>
-
-        <i class="bi bi-chevron-down dropdown-icon"></i>
-      </button>
-
-      <div class="collapse" id="setupMenu">
-        <div class="sidebar-submenu">
-          <a href="#" class="sidebar-submenu-link">General Setup</a>
-          <a href="#" class="sidebar-submenu-link">Departments</a>
-          <a href="#" class="sidebar-submenu-link">Employees</a>
-        </div>
-      </div>
-
-      <a href="#" class="sidebar-link">
-        <i class="bi bi-play-circle"></i>
-        <span>Survey Live/Close</span>
-      </a>
-
-      <a href="#" class="sidebar-link">
-        <i class="bi bi-people"></i>
-        <span>Participation</span>
-      </a>
-
-      <a href="#" class="sidebar-link">
-        <i class="bi bi-clipboard-data"></i>
-        <span>Result</span>
-      </a>
-
-      <a href="#" class="sidebar-link">
-        <i class="bi bi-clipboard-data"></i>
-        <span>Action Planning</span>
-      </a>
-
-    </div>
-  </nav>
-</div>
 
 
         <div class="right-panel">
 
-            <div id="navbar-placeholder"></div>
+            <div id="navbar-placeholder" ></div>
 
             <div class="main-content">
 
