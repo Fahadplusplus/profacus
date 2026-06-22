@@ -122,12 +122,11 @@ window.addEventListener("resize", () => {
   }
 });
 
-
-
-document.querySelectorAll('.prism-card').forEach(card => {
-  card.addEventListener('click', function (e) {
+document.querySelectorAll('.sd-circle').forEach(circle => {
+  circle.addEventListener('click', function (e) {
     e.preventDefault();
-    document.querySelectorAll('.prism-card').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.sd-circle').forEach(c => c.classList.remove('active'));
     this.classList.add('active');
   });
 });
+
