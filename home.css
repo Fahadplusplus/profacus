@@ -1,106 +1,7 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #f4f6fa;
-  font-family: 'Instrument Sans', sans-serif;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: 'Gabarito', sans-serif;
-}
-
-.layout-body {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  overflow: hidden;
-}
 
 
-/* ── Right panel ── */
-.right-panel {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  overflow: hidden;
-}
 
-/* ── Top navbar ── */
-.top-navbar {
-  height: 56px;
-  background: #f3f8ff;
-  border-bottom: 1px solid #e5e7eb;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  flex-shrink: 0;
-  z-index: 100;
-}
 
-.top-navbar .brand {
-  font-weight: 700;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.top-navbar .brand img { height: 32px; }
-
-.top-navbar .admin-info {
-  font-size: 14px;
-  color: #374151;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-}
-
-/* Hamburger button — hidden on desktop */
-#sidebar-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 22px;
-  color: #1a2f7a;
-  cursor: pointer;
-  padding: 4px 8px;
-  margin-right: 8px;
-}
-
-/* ── Main content ── */
-.main-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 28px 32px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  background-color: white;
-}
-
-.main-content::-webkit-scrollbar { display: none; }
-
-/* ── Footer ── */
-.footer {
-  height: 44px;
-  background: #1e3a8a;
-  color: #cbd5e1;
-  font-size: 12px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
 
 /* ── PRISM cards ── */
 .prism-wrapper { padding: 32px 24px; }
@@ -136,18 +37,15 @@ h1, h2, h3, h4, h5 {
   text-decoration: none;
 }
 
+
+
 .prism-card:hover {
-  box-shadow: 0 4px 16px rgba(33, 64, 154, 0.1);
+  background: #21409A;
   border-color: #21409a;
 }
 
-.prism-card.active {
-  background: #21409a;
-  border-color: #21409a;
-}
-
-.prism-card.active .card-title-text { color: #fff; }
-.prism-card.active .card-desc       { color: rgba(255,255,255,0.8); }
+.prism-card:hover .card-title-text { color: #fff; }
+.prism-card:hover .card-desc       { color: rgba(255,255,255,0.8); }
 
 .prism-card.selected {
   border: 2px solid #21409a;
@@ -167,7 +65,7 @@ h1, h2, h3, h4, h5 {
   flex-shrink: 0;
 }
 
-.prism-card.active .prism-icon {
+.prism-card:hover .prism-icon {
   background: rgba(255,255,255,0.15);
   color: #fff;
 }
@@ -258,14 +156,3 @@ h1, h2, h3, h4, h5 {
   .main-content { padding: 16px 12px; }
 }
 
-/* Mobile ≤ 576px */
-@media (max-width: 576px) {
-  .footer {
-    height: 36px;
-    color: #fff;
-    font-size: 8px;
-    padding-inline: 10px;
-  }
-  .brand { font-size: 13px !important; }
-  .prism-wrapper { padding: 20px 12px; }
-}

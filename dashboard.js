@@ -1,5 +1,3 @@
-let toggleBtn = null;
-
 function isMobile() {
   return window.innerWidth <= 992;
 }
@@ -39,7 +37,7 @@ function handleToggleClick() {
 }
 
 function updateToggleButton() {
-  toggleBtn = document.getElementById("sidebar-toggle");
+  const toggleBtn = document.getElementById("sidebar-toggle");
   if (!toggleBtn) return;
 
   toggleBtn.removeEventListener("click", handleToggleClick);
@@ -124,3 +122,12 @@ window.addEventListener("resize", () => {
   }
 });
 
+
+
+document.querySelectorAll('.prism-card').forEach(card => {
+  card.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelectorAll('.prism-card').forEach(c => c.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
