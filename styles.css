@@ -691,7 +691,7 @@ font-weight: 500;
   background: #f8fbff;
   border-right: 1px solid #e5e7eb;
   transition: width 0.3s ease, min-width 0.3s ease, transform 0.3s ease;  /* ← add this */
-}
+} 
 
 /* Fixed logo area */
 .side-logo {
