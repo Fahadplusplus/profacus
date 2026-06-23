@@ -91,11 +91,11 @@ h1, h2, h3, h4, h5 , strong {
 .nav-icon{
   color: #21409A;
  font-size: 24px;
- margin-right: 10px;
+ margin-right: 5px;
 }
 .top-navbar .brand {
   font-weight: 500;
-  font-size: 30px;
+  font-size: 22px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -610,13 +610,13 @@ font-weight: 500;
 }
 
 .sd-circle {
-  width: 114px;
-  height: 114px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 40px;
+  font-size: 26px;
   font-weight: 700;
   flex-shrink: 0;
   position: relative;
@@ -978,7 +978,7 @@ font-weight: 500;
 /* 2400px+ */
 @media (min-width: 2400px) {
   .sd-circle          { width: 200px; height: 200px; }
-  .brand              { font-size: 22px !important; font-weight: 600; }
+  .brand              { font-size: 22px !important; font-weight: 500; }
   .sd-steps-container { max-width: 200vh; }
   .sd-label-bottom .name { font-size: 20px; }
   .sd-label-top .desc,
@@ -986,22 +986,56 @@ font-weight: 500;
   .sd-connector       { left: calc(58% + 50px); top: 10px;  width: calc(75% - 50px); }
   .sd-connectorInvert { left: calc(58% + 50px); top: 250px; width: calc(75% - 50px); }
 }
-
-/* 1400px – 2399px */
-@media (min-width: 1400px) and (max-width: 2399px) {
-  .brand              { font-size: 22px !important; font-weight: 600; }
+@media (min-width: 1711px) and (max-width: 2399px) {
+  .brand              { font-size: 22px !important; font-weight: 500; }
   .sd-steps-container { max-width: 200vh; }
  
   .sd-label-top .desc,
   .sd-label-bottom .desc { font-size: 16px; max-width: 180px; }
-  .sd-connector       { left: calc(55% + 50px); top: 40px;  width: calc(75% - 50px); }
-  .sd-connectorInvert { left: calc(55% + 50px); top: 165px; width: calc(75% - 45px); }
+      .sd-connector {
+        left: calc(55% + 40px);
+        top: 17px;
+        width: calc(75% - 50px);
+    }
+      .sd-connectorInvert {
+        left: calc(55% + 40px);
+        top: 159px;
+        width: calc(75% - 45px);
+    }
+  .sd-label-bottom {
+    margin-left: 25px;
+    
+}
+
+}
+
+
+@media (min-width: 1400px) and (max-width: 1710px) {
+  .brand              { font-size: 22px !important; font-weight: 500; }
+  .sd-steps-container { max-width: 200vh; }
+ 
+  .sd-label-top .desc,
+  .sd-label-bottom .desc { font-size: 16px; max-width: 180px; }
+      .sd-connector {
+        left: calc(55% + 40px);
+        top: 47px;
+        width: calc(75% - 50px);
+    }
+      .sd-connectorInvert {
+        left: calc(55% + 40px);
+        top: 154px;
+        width: calc(75% - 45px);
+    }
+  .sd-label-bottom {
+    margin-left: 25px;
+    
+}
 
 }
 
 /* 1200px – 1399px */
 @media (min-width: 1200px) and (max-width: 1399px) {
-
+  .brand              { font-size: 22px !important; font-weight: 500; }
   .sd-steps-container { max-width: 950px; }
   .sd-label-top .name,
   .sd-label-bottom .name { font-size: 10px; }
@@ -1019,7 +1053,7 @@ font-weight: 500;
   .stat-pill .value { font-size: 18px; }
   .btn-create,
   .btn-hidden    { font-size: 16px; padding: 6px 12px; }
- 
+  .brand              { font-size: 22px !important; font-weight: 500; }
   .sd-steps-container { max-width: 100%; }
   .sd-head h2         { font-size: 22px; }
   .sd-head p          { font-size: 15px; }
@@ -1027,8 +1061,16 @@ font-weight: 500;
   .sd-label-bottom .name { font-size: 10px; }
   .sd-label-top .desc,
   .sd-label-bottom .desc { font-size: 8px; max-width: 100px; }
-  .sd-connector       { left: calc(45% + 50px); top: 35px;  width: calc(80% - 50px); }
-  .sd-connectorInvert { left: calc(45% + 50px); top: 200px; width: calc(80% - 45px); }
+  .sd-connector {
+        left: calc(45% + 50px);
+        top: 49px;
+        width: calc(80% - 50px);
+    }
+      .sd-connectorInvert {
+        left: calc(45% + 40px);
+        top: 157px;
+        width: calc(80% - 45px);
+    }
 }
 
 /* 769px – 992px — sidebar becomes overlay drawer */
@@ -1046,7 +1088,7 @@ font-weight: 500;
   }
   .sidebar.sidebar-open { transform: translateX(0); }
 
-  
+  .brand              { font-size: 22px !important; }
   .main-content       { padding: 20px; }
   .sd-head            { padding: 0 16px; }
   .sd-steps-container { max-width: 100%; }
@@ -1087,11 +1129,11 @@ font-weight: 500;
   }
   .sidebar.sidebar-open { transform: translateX(0); }
 
-  
+  .brand              { font-size: 22px !important; }
   .main-content       { padding: 16px 12px; }
   .sd-head            { padding: 0 12px; }
   .sd-steps-container { max-width: 100%; }
-  .sd-circle          { width: 80px; height: 80px; font-size: 17px; }
+  .sd-circle          { width: 50px; height: 50px; font-size: 17px; }
   .sd-label-top,
   .sd-label-bottom    { min-height: 40px; }
   .sd-label-top       { margin-bottom: 8px; }
@@ -1099,13 +1141,26 @@ font-weight: 500;
   .sd-label-bottom .name { font-size: 8px; }
   .sd-label-top .desc,
   .sd-label-bottom .desc { font-size: 5px; max-width: 80px; }
-  .sd-connector       { left: calc(50% + 40px); top: 50px;  width: calc(70% - 40px); }
-  .sd-connectorInvert { left: calc(52% + 40px); top: 110px; width: calc(70% - 40px); }
+      .sd-connector {
+        left: calc(55% + 25px);
+        top: 22px;
+        width: calc(70% - 40px);
+    }
+      .sd-connectorInvert {
+        left: calc(52% + 30px);
+        top: 92px;
+        width: calc(70% - 40px);
+    }
+    .sd-connector img, .sd-connectorInvert img {
+    width: 137%;
+    height: 100%;
+    display: block;
+}
 }
 
 /* ≤576px — vertical, no connectors */
 @media (max-width: 576px) {
-  .brand         { font-size: 13px !important; margin-top: 4px; }
+  .brand         { font-size: 22px !important;}
   .main-content  { padding: 14px 10px; }
 
   .footer {
@@ -1133,7 +1188,7 @@ font-weight: 500;
   .sidebar.sidebar-open { transform: translateX(0); }
 
   .nav-logo           { height: 20px; }
-  .brand              { font-size: 13px !important; }
+  .brand              { font-size: 22px !important; }
   .main-content       { padding: 16px 12px; }
 
   .footer {
