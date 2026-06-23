@@ -13,7 +13,7 @@ body {
   flex-direction: column;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 , strong {
   font-family: 'Gabarito', sans-serif;
 }
 
@@ -30,6 +30,28 @@ h1, h2, h3, h4, h5 {
   flex-direction: column;
   flex: 1;
   overflow: hidden;
+}
+.sidebar-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.15s;
+}
+.sidebar-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Collapsed state on desktop */
+.sidebar-collapsed .sidebar {
+  width: 0 !important;
+  min-width: 0 !important;
 }
 
 #sidebar-toggle {
@@ -69,7 +91,7 @@ h1, h2, h3, h4, h5 {
 .nav-icon{
   color: #21409A;
  font-size: 24px;
- margin-right: 2px;
+ margin-right: 10px;
 }
 .top-navbar .brand {
   font-weight: 500;
@@ -646,7 +668,12 @@ font-weight: 500;
     font-weight: 600;
 }
 
-
+  .footer-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: #222222;
+  }
 
 
 
@@ -657,16 +684,13 @@ font-weight: 500;
   min-width: 250px;
   height: 100vh;
   flex-shrink: 0;
-
   display: flex;
   flex-direction: column;
-
   overflow: hidden;
   padding: 0;
-  
   background: #f8fbff;
   border-right: 1px solid #e5e7eb;
-  transition: transform 0.3s ease;
+  transition: width 0.3s ease, min-width 0.3s ease, transform 0.3s ease;  /* ← add this */
 }
 
 /* Fixed logo area */
@@ -977,7 +1001,7 @@ font-weight: 500;
 
 /* 1200px – 1399px */
 @media (min-width: 1200px) and (max-width: 1399px) {
-  .brand              { font-size: 22px !important; font-weight: 600; }
+
   .sd-steps-container { max-width: 950px; }
   .sd-label-top .name,
   .sd-label-bottom .name { font-size: 10px; }
@@ -995,7 +1019,7 @@ font-weight: 500;
   .stat-pill .value { font-size: 18px; }
   .btn-create,
   .btn-hidden    { font-size: 16px; padding: 6px 12px; }
-  .brand              { font-size: 20px !important; font-weight: 600; }
+ 
   .sd-steps-container { max-width: 100%; }
   .sd-head h2         { font-size: 22px; }
   .sd-head p          { font-size: 15px; }
@@ -1022,7 +1046,7 @@ font-weight: 500;
   }
   .sidebar.sidebar-open { transform: translateX(0); }
 
-  .brand              { font-size: 16px !important; }
+  
   .main-content       { padding: 20px; }
   .sd-head            { padding: 0 16px; }
   .sd-steps-container { max-width: 100%; }
@@ -1063,7 +1087,7 @@ font-weight: 500;
   }
   .sidebar.sidebar-open { transform: translateX(0); }
 
-  .brand              { font-size: 14px !important; }
+  
   .main-content       { padding: 16px 12px; }
   .sd-head            { padding: 0 12px; }
   .sd-steps-container { max-width: 100%; }

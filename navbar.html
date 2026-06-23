@@ -1,15 +1,22 @@
 <nav class="top-navbar">
-    <div class="d-flex align-items-center">
-        <!-- Hamburger: only visible on ≤992px via CSS -->
-        <button id="sidebar-toggle" aria-label="Toggle sidebar">
-            <i class="bi bi-list"></i>
-        </button>
-       
-        <span> <i class="nav-icon bi bi-house-door-fill"></i> </span>
-        <p class="brand mb-0">Demo - Employee Engagement Survey - 2026</p>
-    </div>
-    <div class="admin-info">
-        <img src="assets/icons/admin.svg" alt=""> Admin
-        <i class="bi bi-chevron-down"></i>
-    </div>
+  <div class="d-flex align-items-center gap-2">
+
+    <!-- Desktop toggle: collapses sidebar on large screens, hidden on mobile -->
+    <button type="button" id="sidebar-desktop-toggle" class="sidebar-toggle-btn d-none d-lg-flex" aria-label="Toggle sidebar">
+      <i class="bi bi-layout-sidebar"></i>
+    </button>
+
+    <!-- Mobile hamburger: only visible on ≤992px -->
+    <button type="button" id="sidebar-toggle" class="sidebar-toggle-btn d-flex d-lg-none" aria-label="Toggle sidebar">
+      <i class="bi bi-layout-sidebar"></i>
+    </button>
+
+    <span><i class="nav-icon bi bi-house-door-fill"></i></span>
+    <p class="brand mb-0">Demo</p>
+  </div>
+
+  <div class="admin-info">
+    <img src="assets/icons/admin.svg" alt=""> Admin
+    <i class="bi bi-chevron-down"></i>
+  </div>
 </nav>
