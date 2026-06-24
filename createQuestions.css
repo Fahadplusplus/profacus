@@ -87,8 +87,58 @@
     width: 160vh;
 }
 
-.accordian{
-    
-    background-color:#F3F8FF ;
-    
+.prism-title{
+    background:#eef3fb;
+    padding:16px 24px;
+    border-radius:10px 10px 0 0;
+    font-size:18px;
+    font-weight:600;
+    width:max-content;
+}
+
+.add-btn{
+    min-width:170px;
+    height:42px;
+}
+
+.prism-wrapper{
+   
+    border-radius:14px;
+    padding:20px;
+    background:#f8fbff;
+}
+
+.category-section{
+    margin-bottom:28px;
+}
+
+.category-title{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.description-box{
+    background:#dce9ff;
+    border-radius:10px;
+    padding:14px 16px;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    margin-bottom:12px;
+}
+
+.questions-card{
+    background:#fff;
+    border-radius:10px;
+    padding:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.question-input{
+    margin-bottom:10px;
+}
+
+.question-input:last-child{
+    margin-bottom:0;
 }
