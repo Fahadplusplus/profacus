@@ -37,6 +37,7 @@ Promise.all([
       replaceStepPlaceholder('stepCom3', step3Html);
       initSteps();
       initStep3();
+      initEmployeeSteps()
     }
 
     addSidebarActiveHandlers();
@@ -69,7 +70,10 @@ function addSidebarActiveHandlers() {
 }
 
 function initSteps() {
-    const steps = document.querySelectorAll('.step');
+    const stepsContainer = document.querySelector('.surveysteps .stepcon');
+    if (!stepsContainer) return;
+    
+    const steps = stepsContainer.querySelectorAll('.step');
     const stepContents = document.querySelectorAll('.step-content');
 
     stepContents.forEach(content => content.style.display = 'none');
@@ -82,15 +86,43 @@ function initSteps() {
             steps.forEach(s => s.classList.remove('active'));
             this.classList.add('active');
 
-            stepContents.forEach(content => {
-                content.style.display = 'none';
-            });
-
+            stepContents.forEach(content => content.style.display = 'none');
             document.getElementById(`stepCom${index + 1}`).style.display = 'block';
         });
     });
 }
 
+function initEmployeeSteps() {
+    // Scope to stepCom1 only so it doesn't clash with initSteps
+    const container = document.getElementById('stepCom1');
+    if (!container) return;
+
+    const step1 = container.querySelector('.step:nth-child(1)');
+    const step2 = container.querySelector('.step:nth-child(2)');
+    const step1div = container.querySelector('.step1div');
+    const step2div = container.querySelector('.step2div');
+
+    if (!step1 || !step2 || !step1div || !step2div) return;
+
+    // Initial state
+    step2div.style.display = 'none';
+
+    step1.addEventListener('click', function (e) {
+        e.preventDefault();
+        step1.classList.add('active');
+        step2.classList.remove('active');
+        step1div.style.display = 'block';
+        step2div.style.display = 'none';
+    });
+
+    step2.addEventListener('click', function (e) {
+        e.preventDefault();
+        step2.classList.add('active');
+        step1.classList.remove('active');
+        step2div.style.display = 'block';
+        step1div.style.display = 'none';
+    });
+}
 
 
 

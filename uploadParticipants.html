@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="createQuestions.css">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -27,117 +27,132 @@
             <div id="navbar-placeholder"></div>
             <div class="main-content">
 
-                 <!-- Page heading -->
-            <div class="mb-4">
-                <h2 class="questionTitle">Employees</h2>
-                <p class="questiondes">Manage and track all employee survey participation.</p>
-            </div>
- 
-            <!-- Toolbar -->
-            <div class="dt-toolbar">
-                <select class="dt-select" id="statusFilter">
-                    <option value="">Select Status</option>
-                    <option value="Complete">Complete</option>
-                    <option value="Sent">Sent</option>
-                    <option value="Not Sent">Not Sent</option>
-                </select>
- 
-                <select class="dt-select" id="entriesFilter">
-                    <option value="10">Select Entries</option>
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                </select>
- 
-                <div class="spacer"></div>
- 
-                <button class="btn-add-emp" onclick="openAddModal()">
-                    <i class="bi bi-plus-lg me-1"></i> Add Employee
-                </button>
-                <button class="btn-add-all">Add All Participants</button>
-            </div>
- 
-            <!-- Table -->
-            <div class="dt-card">
-                <table id="employeeTable">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Employee ID</th>
-                            <th>Email</th>
-                            <th>Channel</th>
-                            <th>Status</th>
-                            <th>Reminder</th>
-                            <th>Time</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                        <!-- Rows injected by JS -->
-                    </tbody>
-                </table>
-            </div>
- 
-            <!-- Footer: info + pagination -->
-            <div class="dt-footer">
-                <div class="dt-info" id="tableInfo">Showing 1-10 from 50</div>
-                <ul class="dt-pagination" id="pagination"></ul>
-            </div>
- 
-            <!-- Send Survey -->
-            <div class="dt-bottom-row">
-                <button class="btn-send-survey">Send Survey</button>
-            </div>
- 
-        </div>
-    </div>
-</div>
- 
-<div id="footer-placeholder"></div>
- 
-<!-- Add Employee Modal -->
-<div class="modal fade" id="addEmployeeModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="border-radius:14px;">
-            <div class="modal-header border-0 pb-0">
-                <h5 class="modal-title fw-700" style="font-weight:700;">Add Employee</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label class="form-label fw-600" style="font-weight:600;font-size:14px;">Name</label>
-                    <input type="text" class="form-control" id="modalName" placeholder="Enter name">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-600" style="font-weight:600;font-size:14px;">Employee ID</label>
-                    <input type="text" class="form-control" id="modalEmpId" placeholder="e.g. p-01">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-600" style="font-weight:600;font-size:14px;">Email</label>
-                    <input type="email" class="form-control" id="modalEmail" placeholder="Enter email">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-600" style="font-weight:600;font-size:14px;">Channel</label>
-                    <select class="form-select" id="modalChannel">
-                        <option value="NA">NA</option>
-                        <option value="Email">Email</option>
-                        <option value="SMS">SMS</option>
-                    </select>
-                </div>
-            </div>
-            <div class="modal-footer border-0 pt-0">
-                <button class="btn-add-all" data-bs-dismiss="modal">Cancel</button>
-                <button class="btn-add-emp ms-2" onclick="addEmployee()">Add Employee</button>
-            </div>
-        </div>
-    </div>
-</div>
-              
-                
 
+                <!-- Page heading -->
+                <div class="mb-4">
+                    <h2 class="questionTitle">Upload Participants</h2>
+                    <p class="questiondes">Manage and track all employee survey participation.</p>
+                </div>
+
+                <div class="surveysteps">
+                    <div class="stepcon ">
+                        <a href="#" class="step active">Step 1</a>
+                        <a href="#" class="step">Step 2</a>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="dt-toolbar mt-5">
+                        <select class="dt-select" id="statusFilter">
+                            <option value="">Select Status</option>
+                            <option value="Complete">Complete</option>
+                            <option value="Sent">Sent</option>
+                            <option value="Not Sent">Not Sent</option>
+                        </select>
+
+                        <select class="dt-select" id="entriesFilter">
+                            <option value="10">Select Entries</option>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+
+                        <div class="spacer"></div>
+
+                        <button class="btn-add-emp" onclick="openAddModal()">
+                            <i class="bi bi-plus-lg me-1"></i> Add Employee
+                        </button>
+                        <button class="btn-add-all">Add All Participants</button>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="dt-card">
+                        <table id="employeeTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Employee ID</th>
+                                    <th>Email</th>
+                                    <th>Channel</th>
+                                    <th>Status</th>
+                                    <th>Reminder</th>
+                                    <th>Time</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Rows injected by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Footer: info + pagination -->
+                    <div class="dt-footer">
+                        <div class="dt-info" id="tableInfo">Showing 1-10 from 50</div>
+                        <ul class="dt-pagination" id="pagination"></ul>
+                    </div>
+
+                    <!-- Send Survey -->
+                    <div class="dt-bottom-row">
+                        <button class="btn-send-survey">Send Survey</button>
+                    </div>
+                </div>
+                <!-- Toolbar -->
+
+
+                <div class="">s;kdlknd</div>
             </div>
 
+
         </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Add Employee Modal -->
+    <div class="modal fade" id="addEmployeeModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius:14px;">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-700" style="font-weight:700;">Add Employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label fw-600" style="font-weight:600;font-size:14px;">Name</label>
+                        <input type="text" class="form-control" id="modalName" placeholder="Enter name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-600" style="font-weight:600;font-size:14px;">Employee ID</label>
+                        <input type="text" class="form-control" id="modalEmpId" placeholder="e.g. p-01">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-600" style="font-weight:600;font-size:14px;">Email</label>
+                        <input type="email" class="form-control" id="modalEmail" placeholder="Enter email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-600" style="font-weight:600;font-size:14px;">Channel</label>
+                        <select class="form-select" id="modalChannel">
+                            <option value="NA">NA</option>
+                            <option value="Email">Email</option>
+                            <option value="SMS">SMS</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button class="btn-add-all" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn-add-emp ms-2" onclick="addEmployee()">Add Employee</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    </div>
+
+    </div>
     </div>
 
     <div id="footer-placeholder"></div>
@@ -145,144 +160,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="sidebar.js"></script>
     <script src="dashboard.js"></script>
+    <script src="table.js"></script>
     <script>
-// ── Dummy data ──
-const allEmployees = Array.from({ length: 50 }, (_, i) => ({
-    name: 'Anonymous',
-    empId: 'p-' + (i + 1),
-    email: i % 3 === 0 ? 'user@email.com' : 'NA',
-    channel: i % 2 === 0 ? 'Email' : 'NA',
-    status: ['Complete', 'Sent', 'Not Sent'][i % 3],
-    reminder: '0 time',
-    time: 'Not Schedule'
-}));
- 
-let currentPage = 1;
-const rowsPerPage = 10;
-let filtered = [...allEmployees];
- 
-function statusBadge(status) {
-    const map = {
-        'Complete': 'badge-complete',
-        'Sent':     'badge-sent',
-        'Not Sent': 'badge-not-sent'
-    };
-    return `<span class="badge-status ${map[status] || ''}">${status}</span>`;
-}
- 
-function renderTable() {
-    const start = (currentPage - 1) * rowsPerPage;
-    const end   = start + rowsPerPage;
-    const rows  = filtered.slice(start, end);
- 
-    const tbody = document.getElementById('tableBody');
-    tbody.innerHTML = rows.map(r => `
-        <tr>
-            <td>${r.name}</td>
-            <td>${r.empId}</td>
-            <td>${r.email}</td>
-            <td>${r.channel}</td>
-            <td>${statusBadge(r.status)}</td>
-            <td>${r.reminder}</td>
-            <td>${r.time}</td>
-            <td>
-                <div class="action-icons">
-                    <a href="#" title="Edit"><i class="bi bi-pencil"></i></a>
-                    <a href="#" class="del" title="Delete"><i class="bi bi-trash"></i></a>
-                    <a href="#" title="Download"><i class="bi bi-download"></i></a>
-                </div>
-            </td>
-        </tr>
-    `).join('');
- 
-    document.getElementById('tableInfo').textContent =
-        `Showing ${start + 1}-${Math.min(end, filtered.length)} from ${filtered.length}`;
- 
-    renderPagination();
-}
- 
-function renderPagination() {
-    const totalPages = Math.ceil(filtered.length / rowsPerPage);
-    const ul = document.getElementById('pagination');
-    let html = '';
- 
-    html += `<li class="prev-next ${currentPage === 1 ? 'disabled' : ''}">
-                <a href="#" onclick="goPage(${currentPage - 1});return false;">&lt;&lt; Previous</a>
-             </li>`;
- 
-    const pages = getPageNumbers(currentPage, totalPages);
-    pages.forEach(p => {
-        if (p === '...') {
-            html += `<li class="dots"><a href="#">...</a></li>`;
-        } else {
-            html += `<li class="${p === currentPage ? 'active' : ''}">
-                        <a href="#" onclick="goPage(${p});return false;">${p}</a>
-                     </li>`;
-        }
+document.addEventListener('DOMContentLoaded', function () {
+    // wait for content to be injected first
+    window.addEventListener('sidebar-ready', function () {
+        const container = document.getElementById('stepCom1');
+        if (!container) return;
+
+        const step1 = container.querySelector('.step:nth-child(1)');
+        const step2 = container.querySelector('.step:nth-child(2)');
+        const step1div = container.querySelector('.step1div');
+        const step2div = container.querySelector('.step2div');
+
+        if (!step1 || !step2 || !step1div || !step2div) return;
+
+        step2div.style.display = 'none';
+
+        step1.addEventListener('click', function (e) {
+            e.preventDefault();
+            step1.classList.add('active');
+            step2.classList.remove('active');
+            step1div.style.display = 'block';
+            step2div.style.display = 'none';
+        });
+
+        step2.addEventListener('click', function (e) {
+            e.preventDefault();
+            step2.classList.add('active');
+            step1.classList.remove('active');
+            step2div.style.display = 'block';
+            step1div.style.display = 'none';
+        });
     });
- 
-    html += `<li class="prev-next ${currentPage === totalPages ? 'disabled' : ''}">
-                <a href="#" onclick="goPage(${currentPage + 1});return false;">Next &gt;&gt;</a>
-             </li>`;
- 
-    ul.innerHTML = html;
-}
- 
-function getPageNumbers(current, total) {
-    if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
-    if (current <= 4) return [1, 2, 3, 4, 5, '...', total];
-    if (current >= total - 3) return [1, '...', total-4, total-3, total-2, total-1, total];
-    return [1, '...', current - 1, current, current + 1, '...', total];
-}
- 
-function goPage(page) {
-    const totalPages = Math.ceil(filtered.length / rowsPerPage);
-    if (page < 1 || page > totalPages) return;
-    currentPage = page;
-    renderTable();
-}
- 
-// ── Filters ──
-document.getElementById('statusFilter').addEventListener('change', function () {
-    const val = this.value;
-    filtered = val ? allEmployees.filter(e => e.status === val) : [...allEmployees];
-    currentPage = 1;
-    renderTable();
 });
- 
-document.getElementById('entriesFilter').addEventListener('change', function () {
-    // entries filter changes rows per page — kept simple here
-    currentPage = 1;
-    renderTable();
-});
- 
-// ── Add Employee Modal ──
-let addModal;
-function openAddModal() {
-    if (!addModal) addModal = new bootstrap.Modal(document.getElementById('addEmployeeModal'));
-    addModal.show();
-}
- 
-function addEmployee() {
-    const name    = document.getElementById('modalName').value.trim() || 'Anonymous';
-    const empId   = document.getElementById('modalEmpId').value.trim() || 'p-new';
-    const email   = document.getElementById('modalEmail').value.trim() || 'NA';
-    const channel = document.getElementById('modalChannel').value;
- 
-    allEmployees.unshift({ name, empId, email, channel, status: 'Not Sent', reminder: '0 time', time: 'Not Schedule' });
-    filtered = [...allEmployees];
-    currentPage = 1;
-    renderTable();
-    addModal.hide();
- 
-    // clear fields
-    ['modalName','modalEmpId','modalEmail'].forEach(id => document.getElementById(id).value = '');
-}
- 
-// ── Init ──
-renderTable();
 </script>
-  
+
 </body>
 
 </html>
