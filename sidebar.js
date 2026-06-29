@@ -36,6 +36,7 @@ Promise.all([
       replaceStepPlaceholder('stepCom2', step2Html);
       replaceStepPlaceholder('stepCom3', step3Html);
       initSteps();
+      initStep3();
     }
 
     addSidebarActiveHandlers();

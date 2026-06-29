@@ -1,6 +1,6 @@
 .questionTitle {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
     color: #21409A;
     
 }
@@ -88,12 +88,13 @@
 }
 
 .prism-title{
-    background:#eef3fb;
+    background:#F3F8FF;
     padding:16px 24px;
     border-radius:10px 10px 0 0;
-    font-size:18px;
-    font-weight:600;
+    font-size:26px;
+    font-weight:400;
     width:max-content;
+     font-family: 'Gabarito', sans-serif;
 }
 
 .add-btn{
@@ -101,11 +102,13 @@
     height:42px;
 }
 
+
 .prism-wrapper{
-   
     border-radius:14px;
     padding:20px;
-    background:#f8fbff;
+    margin-top: -15px;
+    background:#F3F8FF;
+    
 }
 
 .category-section{
@@ -113,9 +116,10 @@
 }
 
 .category-title{
-    font-size:18px;
-    font-weight:700;
+    font-size:20px;
+    font-weight:600;
     margin-bottom:12px;
+    color: #222222;
 }
 
 .description-box{
@@ -124,8 +128,22 @@
     padding:14px 16px;
     display:flex;
     gap:10px;
-    align-items:flex-start;
+    align-items:center;
+
     margin-bottom:12px;
+}
+.description-box span{
+    color: #222222;
+    font-size: 16px;
+    font-weight: 700;
+    
+}
+.description-box p{
+    color: #222222;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 0;
+    margin-top: 12px;
 }
 
 .questions-card{
@@ -136,9 +154,69 @@
 }
 
 .question-input{
+    font-size: 16px;
+    font-weight: 500;
+
     margin-bottom:10px;
 }
 
 .question-input:last-child{
     margin-bottom:0;
+}
+.form-control{
+    background-color: #FFFFFF !important;
+}
+
+
+.prism-wrapper3{
+    border-radius:14px;
+    padding:20px;
+    
+    background:#ffffff;
+    
+
+    
+}
+.prism-wrapperTop3{
+    border-radius:14px;
+     
+    background:#ffffff;
+     margin-top: 18px; 
+
+}
+
+.step3-title{
+    
+    font-size: 26px;
+    font-weight: 400;
+    color: #222222;
+}
+
+.checkBox{
+   
+     padding: 20px 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    color: #222222 ;
+         font-size: 14px;
+     font-weight: 600;
+}
+
+.activeBox{
+    padding: 20px 10px;
+    background-color: #21409A;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    color: #FFFFFF ;
+         font-size: 14px;
+     font-weight: 600;
+}
+.nextBtn{
+    color: #ffffff;
+    background-color: #F8A51B;
+    border-radius: 10px;
+    padding: 16px 40px;
+    border: none;
+    margin-top: 40px;
 }
