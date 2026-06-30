@@ -11,7 +11,7 @@ const allEmployees = Array.from({ length: 50 }, (_, i) => ({
 }));
  
 let currentPage = 1;
-const rowsPerPage = 10;
+const rowsPerPage = 5;
 let filtered = [...allEmployees];
  
 function statusBadge(status) {

@@ -130,5 +130,17 @@ document.querySelectorAll('.sd-circle').forEach(circle => {
   });
 });
 
+const scheduleFp = flatpickr("#scheduleDate", {
+    enableTime: true,
+    dateFormat: "d / m / Y h:i K",   // matches "04 / 07 / 2026 12:00 PM"
+    defaultDate: "2026-07-04 12:00",
+    minuteIncrement: 5,
+    onReady: function (selectedDates, dateStr, instance) {
+        // make the calendar + chevron icons open the picker too, not just the input
+        document.getElementById('scheduleTrigger').addEventListener('click', () => {
+            instance.open();
+        });
+    }
+});
 
 

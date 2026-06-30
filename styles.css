@@ -930,6 +930,13 @@ strong {
   border: 1px solid #D6E4FF;
   display: flex;
   align-items: center;
+  overflow-x: scroll;
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE and old Edge */
+}
+
+.surveysteps::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari, newer Edge */
 }
 
 .stepcon {
@@ -948,6 +955,54 @@ strong {
   text-align: center;
 
   padding-block: 28px;
+}
+
+
+.resultStep {
+    text-decoration: none;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    padding-block: 16px;
+    transition: color 0.2s ease;
+    padding-left: 20px;
+    align-self: stretch; 
+}
+
+.resultStep:hover {
+    color: #21409A;
+}
+
+.resultStep.active {
+    color: #21409A;
+    font-weight: 700;
+}
+
+.resultStep.active::after {
+        content: "";
+    position: absolute;
+    left: 1px;
+    right: -32px;
+    bottom: -11px;
+    height: 4px;
+    background: #21409A;
+    border-radius: 2px 2px 0 0;
+
+    
+}
+
+@media (max-width: 768px) {
+    .stepcon {
+        gap: 20px;
+    }
+
+    .resultStep {
+        font-size: 14px;
+        padding-block: 12px;
+    }
 }
 
 .step.active {
@@ -1395,6 +1450,195 @@ strong {
   font-weight: 400;
 
 }
+
+.icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box i {
+    font-size: 20px;
+    color: #21409A;
+}
+
+.bg-light-indigo {
+    background-color: #4285F424;
+}
+
+
+.text-indigo {
+   font-size: 18px;
+  font-weight: 600;
+    color: #21409A;
+}
+.warningSpan{
+  font-size: 18px;
+  font-weight: 400;
+  color: #222222;
+}
+.warningcard{
+  font-size: 16px;
+  font-weight: 400;
+  color: #222222;
+}
+
+.badge-status.badge-complete-plan {
+    background-color: #DCFCE7;
+    color: #16A34A;
+}
+
+.badge-status.badge-delayed {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+.progress-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-track {
+    flex: 1;
+    height: 5px;
+    background-color: #E5E7EB;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 110px;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.progress-fill.complete {
+    background-color: #22C55E;
+}
+
+.progress-fill.delayed {
+    background-color: #DC2626;
+}
+
+.progress-percent {
+    font-size: 13px;
+    font-weight: 600;
+    min-width: 32px;
+    text-align: right;
+}
+
+.progress-percent.complete {
+    color: #16A34A;
+}
+
+.progress-percent.delayed {
+    color: #DC2626;
+}
+
+.action-icons-table {
+    display: flex;
+    gap: 10px;
+}
+
+.action-icons-table a {
+    color: #2563EB;
+    font-size: 15px;
+}
+
+
+.completed-card {
+    
+    border-radius: 14px;
+    background: #F3F8FF;
+    padding: 20px;
+    height: 100%;
+}
+
+.completed-label {
+    font-size: 20px;
+    font-weight: 400;
+    color: #222222;
+    margin-bottom: 8px;
+}
+
+.donut-wrap {
+    position: relative;
+  
+}
+
+
+
+.donut-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: 700;
+    color: #1CD23A;
+    pointer-events: none;
+}
+
+.stat-card {
+    background-color: #F5F8FF;
+    border-radius: 14px;
+    padding: 18px 20px;
+    height: 100%;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.stat-big {
+    font-size: 40px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.stat-small {
+    font-size: 16px;
+    font-weight: 500;
+    color: #222222;
+    margin-left: 2px;
+}
+
+.stat-number {
+    font-size: 40px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.progress-track-lg {
+    position: relative;
+    height: 20px;
+    background-color: #E5E5E5;
+    border-radius: 20px;
+}
+
+.progress-fill-lg {
+    height: 100%;
+    background-color: #1CD23A;
+    border-radius: 999px;
+}
+
+.progress-handle {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #1CD23A;
+    border: 4px solid #DCFCE7;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 @media (min-width: 1600px) {
   .form-col {
