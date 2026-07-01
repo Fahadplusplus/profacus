@@ -122,12 +122,32 @@ window.addEventListener("resize", () => {
   }
 });
 
-document.querySelectorAll('.sd-circle').forEach(circle => {
-  circle.addEventListener('click', function (e) {
+// document.querySelectorAll('.sd-circle').forEach(circle => {
+//   circle.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     document.querySelectorAll('.sd-circle').forEach(c => c.classList.remove('active'));
+//     this.classList.add('active');
+        
+   
+//   });
+// });
+document.addEventListener('click', function (e) {
+  const circle = e.target.closest('.sd-circle');
+  if (circle) {
     e.preventDefault();
     document.querySelectorAll('.sd-circle').forEach(c => c.classList.remove('active'));
-    this.classList.add('active');
-  });
+    circle.classList.add('active');
+    return;
+  }
+
+  const name = e.target.closest('.name');
+  if (name) {
+    e.preventDefault();
+    const step = name.closest('.sd-step');
+    document.querySelectorAll('.name').forEach(c => c.classList.remove('active-label'));
+    // activate both the desktop and mobile copy for this same step
+    step.querySelectorAll('.name').forEach(c => c.classList.add('active-label'));
+  }
 });
 
 const scheduleFp = flatpickr("#scheduleDate", {
