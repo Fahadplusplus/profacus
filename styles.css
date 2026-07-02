@@ -670,6 +670,7 @@ strong {
   margin: 0 0 3px;
 }
 
+.sd-label-top .name.active-label,
 .sd-label-bottom .name.active-label {
   color: #1a2f7a;
 }

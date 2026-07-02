@@ -132,22 +132,21 @@ window.addEventListener("resize", () => {
 //   });
 // });
 document.addEventListener('click', function (e) {
-  const circle = e.target.closest('.sd-circle');
-  if (circle) {
-    e.preventDefault();
-    document.querySelectorAll('.sd-circle').forEach(c => c.classList.remove('active'));
-    circle.classList.add('active');
-    return;
-  }
+  const step = e.target.closest('.sd-step');
+  
+  if (!step) return;
 
-  const name = e.target.closest('.name');
-  if (name) {
-    e.preventDefault();
-    const step = name.closest('.sd-step');
-    document.querySelectorAll('.name').forEach(c => c.classList.remove('active-label'));
-    // activate both the desktop and mobile copy for this same step
-    step.querySelectorAll('.name').forEach(c => c.classList.add('active-label'));
-  }
+  e.preventDefault();
+
+  // reset every step
+  document.querySelectorAll('.sd-step').forEach(s => {
+    s.querySelector('.sd-circle')?.classList.remove('active');
+    s.querySelectorAll('.name').forEach(n => n.classList.remove('active-label'));
+  });
+
+  // activate the clicked step's circle + all its name copies (desktop top/bottom + mobile)
+  step.querySelector('.sd-circle')?.classList.add('active');
+  step.querySelectorAll('.name').forEach(n => n.classList.add('active-label'));
 });
 
 const scheduleFp = flatpickr("#scheduleDate", {
