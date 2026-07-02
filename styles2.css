@@ -200,7 +200,7 @@
   #sidebar-toggle {
     display: none;
   }
-  
+
 
   .sidebar {
     position: static;
@@ -220,30 +220,34 @@
     width: auto;
     min-height: 100vh;
     padding: 0 !important;
-  }
+  overflow: hidden;
+}
 
   .image-col {
     display: flex !important;
   }
 
   .logo-wrap {
-    text-align: left;
-  }
+  margin-left: 70px;
+  margin-top: 50px;
+  text-align: start;
+}
 
   .logo-img {
     width: 150px;
   }
 
   .login-form {
-    max-width: 440px;
+    max-width: 340px;
   }
 
   .login-form h2 {
-    font-size: 40px;
+    font-size: 30px;
+    font-weight: 600;
   }
 
   .login-form p {
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .login-form .d-flex.justify-content-between {
@@ -252,7 +256,10 @@
   }
 
   .footer-text {
-    text-align: left;
+    margin-left: 70px;
+    margin-bottom: 40px;
+  text-align: start;
+  font-size: 14px;
   }
 
   .remember-text {
@@ -335,6 +342,20 @@
 
 /* ── xl: 1200px+ ── */
 @media (min-width: 1200px) {
+
+ .login-form {
+    max-width: 440px;
+  }
+
+  .login-form h2 {
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .login-form p {
+    font-size: 14px;
+  }
+
   .btn-create,
   .btn-hidden {
     padding: 7px 16px;
